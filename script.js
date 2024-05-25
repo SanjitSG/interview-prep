@@ -19,3 +19,13 @@ console.log(a);
 
 var a = 5;
 var a = 10;
+
+let a = 10;
+// let a = 12;   // not allowed
+
+// initialization
+
+let a;
+// const b;  // not allowed
+
+const b = 12;
