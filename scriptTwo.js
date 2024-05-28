@@ -42,8 +42,24 @@ Array.prototype.myFilter = function (callBack) {
   return temp;
 };
 
-const arr = [1, 2, 5, 6, 7];
+const arr = [1, 2, 5, 6];
 const result = arr.myFilter((num) => {
   return num > 5;
 });
 console.log(result);
+
+// reduce polyfill
+
+Array.prototype.myReduce = function (callback, initialVal) {
+  let accumulator = initialVal;
+  for (let i = 0; i < this.length; i++) {
+    accumulator = accumulator ? callback(accumulator, this[i], i, this) : this[i];
+  }
+  return accumulator;
+};
+
+const res = arr.myReduce((acc, curr) => {
+  return acc + curr;
+}, 0);
+
+console.log(res);
