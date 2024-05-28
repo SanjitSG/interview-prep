@@ -30,17 +30,20 @@
 // });
 // console.log(multiply);
 
-// recursion
+// filter polyfill
 
-const count = (num) => {
-  console.log("First: ", num);
-  if (num === 0) {
-    console.log("---------Base case Reached--------");
-    return;
-  } else {
-    count(num - 1);
-    console.log("Second: ", num);
+Array.prototype.myFilter = function (callBack) {
+  const temp = [];
+
+  for (let i = 0; i < this.length; i++) {
+    if (callBack(this[i], i, this)) temp.push(this[i]);
   }
+
+  return temp;
 };
 
-count(3);
+const arr = [1, 2, 5, 6, 7];
+const result = arr.myFilter((num) => {
+  return num > 5;
+});
+console.log(result);
