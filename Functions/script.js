@@ -1,7 +1,10 @@
 // Function scope
-function mul(a, x, y, ...numbers) {
-  console.log(x, y, numbers);
+
+var x = 74;
+
+function count() {
+  console.log(x); // undefined
+  var x = 10;
 }
 
-arr = [1, 3, 4, 5, 6, 7, 10];
-mul(...arr);
+count();
