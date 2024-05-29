@@ -1,10 +1,14 @@
 // Function scope
 
-var x = 74;
+//callback function
 
-function count() {
-  console.log(x); // undefined
-  var x = 10;
+function greet(name) {
+  alert(`Namaste ${name} 🙏`);
 }
 
-count();
+function getName(callback) {
+  let name = prompt("Enter your name");
+  callback(name);
+}
+
+getName(greet);
