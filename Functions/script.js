@@ -1,26 +1,7 @@
 // Function scope
-// The following variables are defined in the global scope
-const num1 = 20;
-const num2 = 3;
-const name = "Sanjit";
-
-// This function is defined in the global scope
-function multiply() {
-  return num1 * num2;
+function mul(a, x, y, ...numbers) {
+  console.log(x, y, numbers);
 }
 
-console.log(multiply()); // 60
-
-// A nested function example
-function getScore() {
-  const num1 = 2;
-  const num2 = 3;
-
-  function add() {
-    return `${name} scored ${num1 + num2}`;
-  }
-
-  return add();
-}
-
-console.log(getScore()); // "Sanjit scored 5"
+arr = [1, 3, 4, 5, 6, 7, 10];
+mul(...arr);
