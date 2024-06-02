@@ -26,20 +26,34 @@
 
 // Q3. Time optimization
 
-function find() {
-  let a = [];
-  for (let i = 0; i < 1000000; i++) {
-    a[i] = i * i;
-  }
-  return function (index) {
-    console.log(a[index]);
-  };
-}
+// function find() {
+//   let a = [];
+//   for (let i = 0; i < 1000000; i++) {
+//     a[i] = i * i;
+//   }
+//   return function (index) {
+//     console.log(a[index]);
+//   };
+// }
 
-const closure = find(6);
-console.time("6");
-closure(6); // 40ms to 0.58ms
-console.timeEnd("6");
-console.time("50");
-closure(50); // 37ms to 7ms
-console.timeEnd("50");
+// const closure = find(6);
+// console.time("6");
+// closure(6); // 40ms to 0.58ms
+// console.timeEnd("6");
+// console.time("50");
+// closure(50); // 37ms to 7ms
+// console.timeEnd("50");
+
+// Q4. What will be output
+
+// function a() {
+//   for (var i = 0; i < 3; i++) {
+//     function inner(i) {
+//       setTimeout(function log() {
+//         console.log(i);
+//       }, i * 1000);
+//     }
+//     inner(i);
+//   }
+// }
+// a();
