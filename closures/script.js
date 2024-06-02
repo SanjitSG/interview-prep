@@ -60,23 +60,62 @@
 
 //Q5. How would you use a closure to create a private counter?
 
-function counter() {
-  let _counter = 0;
+// function counter() {
+//   let _counter = 0;
 
-  function add(num) {
-    _counter += num;
-  }
+//   function add(num) {
+//     _counter += num;
+//   }
 
-  function retrieve() {
-    return "Counter " + _counter;
-  }
+//   function retrieve() {
+//     return "Counter " + _counter;
+//   }
 
-  return {
-    add,
-    retrieve,
+//   return {
+//     add,
+//     retrieve,
+//   };
+// }
+
+// const c = counter();
+// c.add(5);
+// console.log(c.retrieve());
+
+// Q 6. What is a module pattern?
+
+// const Module = (function () {
+//   function privateMethod(name) {
+//     // do something
+//     console.log("private", name);
+//   }
+
+//   return {
+//     publicMethod: function (name) {
+//       privateMethod(name);
+//     },
+//   };
+// })();
+
+// Module.publicMethod("sanjit");
+
+// Q7. Make this run only once
+
+let view;
+function a() {
+  let called = 0;
+  let view = "Sunrise";
+
+  return function () {
+    if (!called) {
+      console.log("Nice", view);
+      called++;
+    } else {
+      console.log("Already Called");
+    }
   };
 }
 
-const c = counter();
-c.add(5);
-console.log(c.retrieve());
+const greet = a();
+greet();
+greet();
+greet();
