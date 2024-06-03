@@ -100,22 +100,50 @@
 
 // Q7. Make this run only once
 
-let view;
-function a() {
-  let called = 0;
-  let view = "Sunrise";
+// let view;
+// function a() {
+//   let called = 0;
+//   let view = "Sunrise";
 
-  return function () {
-    if (!called) {
-      console.log("Nice", view);
-      called++;
-    } else {
-      console.log("Already Called");
+//   return function () {
+//     if (!called) {
+//       console.log("Nice", view);
+//       called++;
+//     } else {
+//       console.log("Already Called");
+//     }
+//   };
+// }
+
+// const greet = a();
+// greet();
+// greet();
+// greet();
+
+// Q9. Memoize polyfill
+
+function myMemoize(fn, context) {
+  const res = {};
+  return function (...args) {
+    let argsCache = JSON.stringify(args);
+    if (!res[argsCache]) {
+      res[argsCache] = fn.call(context || this, ...args);
     }
+    return res[argsCache];
   };
 }
 
-const greet = a();
-greet();
-greet();
-greet();
+const multiply = (num1, num2) => {
+  for (let i = 0; i <= 1000000; i++) {}
+  return num1 * num2;
+};
+
+const memo = myMemoize(multiply);
+
+console.log(memo(9569, 7889));
+console.time("First call");
+console.timeEnd("First call");
+
+console.time("second call");
+console.log(memo(9569, 7889));
+console.timeEnd("second call");
