@@ -65,4 +65,35 @@
 // a[c] = 456;
 // console.log(a); // {[object object]: 456}
 
-// 4. what is JSON.stringfy and JSON.parse
+// 4. what is JSON.stringify and JSON.parse
+
+// const user = {
+//   name: "Sanjit",
+//   age: 28,
+// };
+
+// const strObj = JSON.stringify(user);
+
+// localStorage.setItem("test", strObj); // test | {"name":"Sanjit","age":28}
+
+// console.log(JSON.parse(localStorage.getItem("test")));
+
+// 5. what's the output?
+
+console.log([..."Sanjit"]); // ['S', 'a', 'n', 'j', 'i', 't']
+
+// spread operator spreads the characters of the string.
+
+// 6. What will the output?
+
+const user = {
+  name: "Sanjit",
+  age: 28,
+};
+const admin = {
+  isAdmin: true,
+  ...user,
+};
+
+console.log(admin); // {isAdmin: true, name: 'Sanjit', age: 28}
+// spread operator copies properties of 'user object' into 'admin object'
