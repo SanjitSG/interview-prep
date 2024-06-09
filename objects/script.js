@@ -80,20 +80,33 @@
 
 // 5. what's the output?
 
-console.log([..."Sanjit"]); // ['S', 'a', 'n', 'j', 'i', 't']
+// console.log([..."Sanjit"]); // ['S', 'a', 'n', 'j', 'i', 't']
 
 // spread operator spreads the characters of the string.
 
 // 6. What will the output?
 
-const user = {
-  name: "Sanjit",
-  age: 28,
-};
-const admin = {
-  isAdmin: true,
-  ...user,
-};
+// const user = {
+//   name: "Sanjit",
+//   age: 28,
+// };
+// const admin = {
+//   isAdmin: true,
+//   ...user,
+// };
 
-console.log(admin); // {isAdmin: true, name: 'Sanjit', age: 28}
-// spread operator copies properties of 'user object' into 'admin object'
+// console.log(admin); // {isAdmin: true, name: 'Sanjit', age: 28}
+// // spread operator copies properties of 'user object' into 'admin object'
+
+// 6. What is the output?
+
+// const calculate = {
+//   radius: 10,
+//   diameter() {
+//     return 2 * this.radius;
+//   },
+//   perimeter: () => 2 * Math.PI * this.radius,
+// };
+
+// console.log(calculate.diameter()); // 20
+// console.log(calculate.perimeter()); // NaN, since this points to window object
