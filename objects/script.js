@@ -110,3 +110,35 @@
 
 // console.log(calculate.diameter()); // 20
 // console.log(calculate.perimeter()); // NaN, since this points to window object
+
+// 7. Object destructuring
+
+// const user = {
+//   name: "Sanjit",
+//   age: 28,
+//   fullName: {
+//     first: "Sanjit",
+//     last: "Gawade",
+//   },
+// };
+
+// const {
+//   name,
+//   fullName: { first, last },
+// } = user;
+
+// console.log(first);
+// console.log(last);
+// console.log(name);
+
+// Q 14 - output?
+const value = { number: 10 };
+
+const multiply = (x = { ...value }) => {
+  console.log((x.number *= 2));
+};
+
+multiply();
+multiply();
+multiply(value);
+multiply(value);
