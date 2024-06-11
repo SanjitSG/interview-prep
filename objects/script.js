@@ -132,13 +132,44 @@
 // console.log(name);
 
 // Q 14 - output?
-const value = { number: 10 };
+// const value = { number: 10 };
 
-const multiply = (x = { ...value }) => {
-  console.log((x.number *= 2));
+// const multiply = (x = { ...value }) => {
+//   console.log((x.number *= 2));
+// };
+
+// multiply();
+// multiply();
+// multiply(value);
+// multiply(value);
+
+//Q 15
+function changeAgeAndReference(person) {
+  person.age = 25;
+  person = {
+    name: "John",
+    age: 50,
+  };
+  return person;
+}
+const personObj1 = {
+  name: "Alex",
+  age: 30,
 };
 
-multiply();
-multiply();
-multiply(value);
-multiply(value);
+const personObj2 = changeAgeAndReference(personObj1);
+
+console.log(personObj1);
+console.log(personObj2);
+
+// Q 16 - What is shallow and deep copy
+
+const user = {
+  name: "Sanjit",
+  age: 28,
+};
+
+// const newObj = Object.assign({}, user);
+// const newObj = JSON.parse(JSON.stringify(user));
+const newObj = { ...user };
+console.log(user, newObj);
