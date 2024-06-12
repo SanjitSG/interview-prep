@@ -27,12 +27,25 @@
 
 // Q - what will be th output
 
-const user = {
-  firstName: "Sanjit",
-  getName() {
-    const firstName = "Tim";
-    return this.firstName;
-  },
-};
+// const user = {
+//   firstName: "Sanjit",
+//   getName() {
+//     const firstName = "Tim";
+//     return this.firstName;
+//   },
+// };
 
-console.log(user.getName()); // "Sanjit" since this points to object inside a method.
+// console.log(user.getName()); // "Sanjit" since this points to object inside a method.
+
+// Q -
+function makeUser() {
+  return {
+    name: "Sanjit",
+    ref() {
+      return this;
+    },
+  };
+}
+
+let user = makeUser();
+console.log(user.ref().name);
