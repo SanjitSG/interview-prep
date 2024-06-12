@@ -37,15 +37,26 @@
 
 // console.log(user.getName()); // "Sanjit" since this points to object inside a method.
 
-// Q -
-function makeUser() {
-  return {
-    name: "Sanjit",
-    ref() {
-      return this;
-    },
-  };
-}
+// Q - OP
+// function makeUser() {
+//   return {
+//     name: "Sanjit",
+//     ref() {
+//       return this;
+//     },
+//   };
+// }
 
-let user = makeUser();
-console.log(user.ref().name);
+// let user = makeUser();
+// console.log(user.ref().name);
+
+// Q - OP
+
+const user = {
+  name: "Sanjit SG",
+  logMsg() {
+    console.log(this.name); // what will be logged?
+  },
+};
+
+setTimeout(user.logMsg, 1000); // noting will be printed
