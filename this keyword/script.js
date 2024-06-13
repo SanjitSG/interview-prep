@@ -52,11 +52,25 @@
 
 // Q - OP
 
-const user = {
-  name: "Sanjit SG",
-  logMsg() {
-    console.log(this.name); // what will be logged?
-  },
-};
+// const user = {
+//   name: "Sanjit SG",
+//   logMsg() {
+//     console.log(this.name); // what will be logged?
+//   },
+// };
 
-setTimeout(user.logMsg, 1000); // noting will be printed
+// setTimeout(user.logMsg, 1000); // noting will be printed
+
+// Q  
+
+const user = { name : 'Sanjit',
+  greet(){
+    return `Hello, ${this.name}!`
+  },
+  farewell:()=>{
+return `Goodbye, ${this.name}!`
+  }
+}
+
+console.log(user.greet()); //Hello, Sanjit!
+console.log(user.farewell()) // Goodbye, ! // farewell is an arrow function, this value of the arrow function is always equal to this of the outer scope. Since we don't have any parent function. 'this' will point to window object.
