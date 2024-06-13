@@ -74,3 +74,8 @@ return `Goodbye, ${this.name}!`
 
 console.log(user.greet()); //Hello, Sanjit!
 console.log(user.farewell()) // Goodbye, ! // farewell is an arrow function, this value of the arrow function is always equal to this of the outer scope. Since we don't have any parent function. 'this' will point to window object.
+
+const user = {
+  name: "Sanjit",
+  age: 26
+}
