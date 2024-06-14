@@ -3,8 +3,8 @@
 // Q. What is call?
 
 let obj = { name: "Sanjit" };
-function sayHello() {
-  return "Hello " + this.name;
+function sayHello(age) {
+  return "Hello " + this.name + age;
 }
 
-console.log(sayHello.call(obj));
+console.log(sayHello.call(obj, 28));
